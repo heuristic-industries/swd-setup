@@ -49,6 +49,13 @@ The [adapter_pcb](adapter_pcb) directory contains a full KiCad project for such 
 
 Submitting the board for fabrication and assembly is beyond the scope of this document, but something we can help with if need be!
 
+### Your PCB
+
+When creating PCBs to use with this setup, the KiCad library has pre-defined symbols that will make life a _lot_ easier and remove any guess-work for these pinouts.
+
+- Production runs: `Conn_ARM_SWD_TagConnect_TC2030-NL`
+- Dev boards: `Connector:Conn_ARM_JTAG_SWD_10` (use the `Connector_IDC:IDC-Header_2x05_P2.54mm_Vertical` footprint with it)
+
 ### Connecting it all
 
 With the programmer, adapter board, and the thing you want to actually flash in hand, plug it in like so:
@@ -73,6 +80,11 @@ If you have other preferences, use those, as they probably have a package for Op
 - Install [Homebrew](https://brew.sh) (follow directions on site)
 - Open a terminal and run `brew install openocd`
 
+##### Linux
+
+Whatever package manager you enjoy probably has a package for OpenOCD and you probably know better than I do already.
+Just install it via whatever makes you happiest, or build it from source if you're feeling spicy.
+
 #### Actually flashing it
 
 With OpenOCD installed, we'll use the following command to do the flashing:
@@ -84,11 +96,6 @@ openocd -f interface/stlink.cfg -f target/stm32f0x.cfg -c "program PATH_TO_BINAR
 Replace `PATH_TO_BINARY` with the file path to the binary you're trying to flash.
 
 I'm using the `stm32f0x` target here, but you may have to change the value for other processors.
-
-##### Linux
-
-Whatever package manager you enjoy probably has a package for OpenOCD and you probably know better than I do already.
-Just install it via whatever makes you happiest, or build it from source if you're feeling spicy.
 
 ### Windows
 

@@ -1,0 +1,4 @@
+Designator,Val,Package,Mid X,Mid Y,Rotation,Layer
+J1,SWD 2.54,IDC-Header_2x05_P2.54mm_Vertical,116.92,-63.6,0.0,top
+J2,Conn_ARM_SWD_TagConnect_TC2030-NL,IDC-Header_2x03_P2.54mm_Vertical,128.1975,-63.605,180.0,top
+J3,SWD,IDC-Header_2x05_P2.54mm_Vertical,105.27,-63.6,0.0,top
